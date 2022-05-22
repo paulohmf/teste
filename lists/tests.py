@@ -6,9 +6,9 @@ from lists.views import home_page
 
 class HomePageTest(TestCase):
 
-    def test_uses_home_template(self):
-        response = self.client.get('/')
-        self.assertTemplateUsed(response, 'home.html')
+    # def test_uses_home_template(self):
+    #     response = self.client.get('/')
+    #     self.assertTemplateUsed(response, 'home.html')
 
     def test_home_page_returns_correct_html(self):
         response = self.client.get('/')  
@@ -29,6 +29,10 @@ class HomePageTest(TestCase):
 
         self.assertIn('A new list item', response.content.decode())
         self.assertTemplateUsed(response, 'home.html')
+    
+    def test_only_saves_items_when_necessary(self):
+        self.client.get('/')
+        self.assertEqual(Item.objects.count(), 0)    
 class ItemModelTest(TestCase):
 
     def test_saving_and_retrieving_items(self):
@@ -46,4 +50,5 @@ class ItemModelTest(TestCase):
         first_saved_item = saved_items[0]
         second_saved_item = saved_items[1]
         self.assertEqual(first_saved_item.text, 'O primeiro item')
-        self.assertEqual(second_saved_item.text, 'O segundo item')    
+        self.assertEqual(second_saved_item.text, 'O segundo item')
+    
