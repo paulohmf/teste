@@ -1,0 +1,6 @@
+Os Testes funcionais são definidos para avaliar funções que um sistema deve executar, ou seja seus requisitos 
+funcionais, o que o sistema deve fazer e suas funções contempladas.
+
+Enquanto isso os Testes de unidade, procuram testar uma pequena unidade do sistema, cobrir uma funcionalidade 
+especifica, como uma adição ou a corretude de uma alteração, ou buscar quesitos não funcionais como vazamentos de
+memória.
