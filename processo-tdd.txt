@@ -1,0 +1,3 @@
+O processo TDD consiste em escrever um testes e em seguida verficar se o teste falha ou não. Se falha, devemos escrever o minimo para ele passar, caso passe entramos na fase de refatoração, se necessária. 
+
+E assim repetimos o ciclo, até que passemos em todos os testes e garantir que nada quebra.
